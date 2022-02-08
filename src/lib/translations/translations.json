@@ -1,0 +1,128 @@
+{
+  "pl": {
+    "loginPage": {
+      "header": "Zaloguj się",
+      "buttonText": "Zaloguj się",
+      "deskImageAlt": "Przestrzeń robocza z biurkiem i przyrządami",
+      "signUpInfo": "Nie masz konta?",
+      "signUp": "Przejdź do strony rejestracji",
+      "forgotPasswordInfo": "Zapomniałeś hasła?",
+      "forgotPassword": "Przejdź do strony resetowania hasła",
+      "successToast": "Zalogowano pomyślnie",
+      "errorToast": "Wystąpił błąd, spróbuj ponownie"
+    },
+    "registerPage": {
+      "header": "Zarejestruj się",
+      "buttonText": "Zarejestruj się",
+      "deskWithMacbookImageAlt": "Biurko z Macbook'iem i dokumentami",
+      "loginInfo": "Masz już konto?",
+      "login": "Przejdź do strony logowania",
+      "successToast": "Konto zostało pomyślnie zarejestrowane. Potwierdź utworzenie konta za pomocą linku, który przyjdzie na Twój adres email",
+      "errorToast": "Wystąpił błąd, spróbuj ponownie"
+    },
+    "resetPasswordPage": {
+      "header": "Resetuj hasło",
+      "buttonText": "Wyślij email z linkiem do resetu hasła",
+      "infoText": "Jeśli nie widzisz wiadomości z linkiem, sprawdź zawartość folderu SPAM.",
+      "deskWithDeveloperImageAlt": "Biurko przy którym siedzi programista",
+      "successToast": "Email został wysłany pomyślnie",
+      "errorToast": "Wystąpił błąd, spróbuj ponownie"
+    },
+    "formFields": {
+      "emailLabel": "Adres Email",
+      "emailPlaceholder": "Wpisz swój adres email",
+      "passwordLabel": "Hasło",
+      "passwordPlaceholder": "Wpisz swoje hasło",
+      "confirmPasswordLabel": "Potwierdź hasło",
+      "confirmPasswordPlaceholder": "Wprowadź swoje hasło",
+      "usernameLabel": "Nazwa użytkownika",
+      "usernamePlaceholder": "Wprowadź swoją nazwę użytkownika",
+      "phoneNumberLabel": "Numer telefonu",
+      "phoneNumberPlaceholder": "Wprowadź swój numer telefonu"
+    },
+    "validationMessages": {
+      "invalidTypeEmail": "Pole musi zawierać poprawny adres email",
+      "notEnoughCharacters": "Minimalna ilość znaków to {characterCount}",
+      "fieldIsRequired": "Pole jest wymagane",
+      "passwordsMustBeEqual": "Hasła muszą być jednakowe"
+    },
+    "toastMessages": {
+      "successTitle": "Sukces",
+      "warningTitle": "Uwaga",
+      "infoTitle": "Info",
+      "errorTitle": "Błąd"
+    },
+    "components": {
+      "AuthenticationControl": {
+        "login": "Zaloguj się",
+        "register": "Zarejestruj się",
+        "logout": "Wyloguj się",
+        "successToast": "Wylogowano pomyślnie",
+        "errorToast": "Wystąpił błąd, spróbuj ponownie"
+      }
+    }
+  },
+  "en": {
+    "loginPage": {
+      "header": "Login",
+      "buttonText": "Login",
+      "deskImageAlt": "Workspace with a desk and computer on it",
+      "signUpInfo": "Don't have an account yet?",
+      "signUp": "Go to sign up page",
+      "forgotPasswordInfo": "Forgot password?",
+      "forgotPassword": "Go to reset password page",
+      "successToast": "Logged in successfully",
+      "errorToast": "There was an error, please try again"
+    },
+    "registerPage": {
+      "header": "Register",
+      "buttonText": "Register",
+      "deskWithMacbookImageAlt": "Desk with Macbook and some documents",
+      "loginInfo": "Already have an account?",
+      "login": "Go to login page",
+      "successToast": "Account was created successfully. Confirm your new account with verification link on your email",
+      "errorToast": "There was an error, please try again"
+    },
+    "resetPasswordPage": {
+      "header": "Reset password",
+      "buttonText": "Send an email with reset password link",
+      "infoText": "If you can't see a message in your inbox, please check SPAM folder.",
+      "deskWithDeveloperImageAlt": "Desk with Developer sitting next to it",
+      "successToast": "Email has been sent successfully",
+      "errorToast": "There was an error, please try again"
+    },
+    "formFields": {
+      "emailLabel": "Email",
+      "emailPlaceholder": "Fill in your email address",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Fill in your password",
+      "confirmPasswordLabel": "Confirm password",
+      "confirmPasswordPlaceholder": "Fill in your password",
+      "usernameLabel": "Username",
+      "usernamePlaceholder": "Fill in your username",
+      "phoneNumberLabel": "Phone number",
+      "phoneNumberPlaceholder": "Fill in your phone number"
+    },
+    "validationMessages": {
+      "invalidTypeEmail": "Value must be a valid email address",
+      "notEnoughCharacters": "Minimum characters count is {characterCount}",
+      "fieldIsRequired": "Field is required",
+      "passwordsMustBeEqual": "Passwords must be equal"
+    },
+    "toastMessages": {
+      "successTitle": "Success",
+      "warningTitle": "Warning",
+      "infoTitle": "Info",
+      "errorTitle": "Error"
+    },
+    "components": {
+      "authenticationControl": {
+        "login": "Login",
+        "register": "Register",
+        "logout": "Logout",
+        "successToast": "Logged out successfully",
+        "errorToast": "There was an error, please try again"
+      }
+    }
+  }
+}
