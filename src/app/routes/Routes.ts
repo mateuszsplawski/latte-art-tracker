@@ -4,4 +4,5 @@ export enum AppRoutes {
   REGISTER = "/register",
   RESET_PASSWORD = "/reset-password",
   USER_SETTINGS = "/user-settings",
+  ONBOARDING = "onboarding"
 }

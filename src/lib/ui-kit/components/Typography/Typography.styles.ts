@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+import { MEDIA_QUERIES } from "lib/ui-kit";
+
 export const StyledH1 = styled.h1`
-  font-size: 3rem;
+  font-size:2rem;
   font-weight: bolder;
+  
+  ${MEDIA_QUERIES.mobile}{
+    font-size: 3rem;
+
+  }
 `;
 
 export const StyledH2 = styled.h2`

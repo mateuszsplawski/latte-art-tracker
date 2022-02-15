@@ -1,37 +1,44 @@
-import { LoginForm } from "./Login.form";
+import { LoginForm } from './Login.form';
+import { useTranslations } from 'lib/translations';
 import {
-  StyledDeskImage as DeskImage,
-  StyledRightColumn as RightColumn,
-} from "./Login.styles";
-import { deskImageSrc } from "assets";
-import { useTranslations } from "lib/translations";
-import { H1, Layout, Link, ParagraphSmall, Section } from "lib/ui-kit";
-import { AppRoutes } from "app";
+  ShadowWrapper,
+  H1,
+  Layout,
+  Link,
+  ParagraphSmall,
+  Section,
+  BackButton,
+} from 'lib/ui-kit';
+import { AppRoutes } from 'app';
+import { StyledLoginImage as LoginImage } from './Login.styles';
+import { coffeeStandImage } from 'assets';
 
 export const Login = () => {
   const t = useTranslations();
   return (
-    <Layout hasFooter={false}>
-      <Section shouldNotScroll>
-        <DeskImage alt={t("loginPage.deskImageAlt")} src={deskImageSrc} />
+    <Layout hasNavigation={false}>
+      <Section isCentered shouldNotScroll>
+        <ShadowWrapper>
+          <BackButton />
 
-        <RightColumn>
-          <H1>{t("loginPage.header")}</H1>
+          <H1>{t('loginPage.header')}</H1>
+
+          <LoginImage alt="" src={coffeeStandImage} />
 
           <LoginForm />
 
           <ParagraphSmall>
-            {t("loginPage.signUpInfo")}&nbsp;
-            <Link to={AppRoutes.REGISTER}>{t("loginPage.signUp")}</Link>
+            {t('loginPage.signUpInfo')}&nbsp;
+            <Link to={AppRoutes.REGISTER}>{t('loginPage.signUp')}</Link>
           </ParagraphSmall>
 
           <ParagraphSmall>
-            {t("loginPage.forgotPasswordInfo")}&nbsp;
+            {t('loginPage.forgotPasswordInfo')}&nbsp;
             <Link to={AppRoutes.RESET_PASSWORD}>
-              {t("loginPage.forgotPassword")}
+              {t('loginPage.forgotPassword')}
             </Link>
           </ParagraphSmall>
-        </RightColumn>
+        </ShadowWrapper>
       </Section>
     </Layout>
   );

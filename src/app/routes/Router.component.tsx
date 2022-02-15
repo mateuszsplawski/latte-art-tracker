@@ -1,27 +1,21 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 
-import { Layout } from "lib/ui-kit";
-import { Login } from "../pages/Login/Login.component";
-import { Register } from "../pages/Register/Register.component";
-import { ResetPassword } from "../pages/ResetPassword/ResetPassword.component";
-import { UserSettings } from "app/pages/UserSettings/UserSettings.component";
-import { AppRoutes } from "./Routes";
+import { AppRoutes } from './Routes';
+import { Login, Register, ResetPassword, UserSettings, Home } from 'app/pages';
+import { RouteGuard } from './RouteGuard.component';
+import { Onboarding } from 'app/pages/Onboarding/Onboarding.component';
 
 export const Router = () => {
   return (
     <Routes>
-      <Route
-        path={AppRoutes.HOME}
-        element={
-          <Layout>
-            <h1>Home view</h1>
-          </Layout>
-        }
-      />
+      <Route path={AppRoutes.HOME} element={<Home />} />
       <Route path={AppRoutes.LOGIN} element={<Login />} />
       <Route path={AppRoutes.REGISTER} element={<Register />} />
       <Route path={AppRoutes.RESET_PASSWORD} element={<ResetPassword />} />
-      <Route path={AppRoutes.USER_SETTINGS} element={<UserSettings />} />
+      <Route element={<RouteGuard />}>
+        <Route path={AppRoutes.USER_SETTINGS} element={<UserSettings />} />
+        <Route path={AppRoutes.ONBOARDING} element={<Onboarding />} />
+      </Route>
     </Routes>
   );
 };

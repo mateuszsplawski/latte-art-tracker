@@ -1,17 +1,15 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-import { Seo, SeoMetadata } from "lib/shared";
-import { Logo } from "../Logo/Logo.component";
-import { Navigation } from "./components/Navigation/Navigation.component";
+import { Seo, SeoMetadata } from 'lib/shared';
+import { Navigation } from './components/Navigation/Navigation.component';
 import {
-  StyledFooter as Footer,
   StyledLayoutWrapper as Wrapper,
   StyledMain as Main,
-} from "./Layout.styles";
+} from './Layout.styles';
 
 interface LayoutProps extends SeoMetadata {
   children: ReactNode;
-  hasFooter?: boolean;
+  hasNavigation?: boolean;
 }
 
 export const Layout = ({
@@ -19,7 +17,7 @@ export const Layout = ({
   metaDescription,
   metaTitle,
   metaRobots,
-  hasFooter = true,
+  hasNavigation = true,
 }: LayoutProps) => {
   return (
     <>
@@ -29,9 +27,8 @@ export const Layout = ({
         metaRobots={metaRobots}
       />
       <Wrapper>
-        <Navigation leftSide={<Logo />} center={<p>Center</p>} />
+        {hasNavigation && <Navigation />}
         <Main>{children}</Main>
-        {hasFooter && <Footer>Footer</Footer>}
       </Wrapper>
     </>
   );

@@ -1,29 +1,32 @@
+import { forgotPasswordImage } from 'assets';
+import { useTranslations } from 'lib/translations';
 import {
-  StyledRightColumn as RightColumn,
-  StyledDeskWithDeveloperImage as DeskWithDeveloperImage,
-} from "./ResetPassword.styles";
-import { useTranslations } from "lib/translations";
-import { H1, Layout, ParagraphSmall, Section } from "lib/ui-kit";
-import { ResetPasswordForm } from "./ResetPassword.form";
-import { deskWithDeveloper } from "assets";
+  H1,
+  Layout,
+  ParagraphSmall,
+  Section,
+  ShadowWrapper,
+  BackButton,
+} from 'lib/ui-kit';
+import { ResetPasswordForm } from './ResetPassword.form';
+import { StyledResetPasswordImage as ResetPasswordImage } from './ResetPassword.styles';
 
 export const ResetPassword = () => {
   const t = useTranslations();
   return (
-    <Layout hasFooter={false}>
-      <Section shouldNotScroll>
-        <DeskWithDeveloperImage
-          src={deskWithDeveloper}
-          alt={t("resetPasswordPage.deskWithDeveloperImageAlt")}
-        />
+    <Layout hasNavigation={false}>
+      <Section shouldNotScroll isCentered>
+        <ShadowWrapper>
+          <BackButton />
 
-        <RightColumn>
-          <H1>{t("resetPasswordPage.header")}</H1>
+          <H1>{t('resetPasswordPage.header')}</H1>
+
+          <ResetPasswordImage alt="" src={forgotPasswordImage} />
 
           <ResetPasswordForm />
 
-          <ParagraphSmall>{t("resetPasswordPage.infoText")}</ParagraphSmall>
-        </RightColumn>
+          <ParagraphSmall>{t('resetPasswordPage.infoText')}</ParagraphSmall>
+        </ShadowWrapper>
       </Section>
     </Layout>
   );

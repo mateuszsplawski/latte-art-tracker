@@ -1,33 +1,37 @@
+import { useTranslations } from 'lib/translations';
 import {
-  StyledLeftColumn as LeftColumn,
-  StyledDeskWithMacbookImage as DeskWithMacbookImage,
-} from "./Register.styles";
-import { useTranslations } from "lib/translations";
-import { H1, Layout, Link, ParagraphSmall, Section } from "lib/ui-kit";
-import { AppRoutes } from "app";
-import { deskWithMacbook } from "assets";
-import { RegisterForm } from "./Register.form";
+  H1,
+  Layout,
+  Link,
+  ParagraphSmall,
+  Section,
+  ShadowWrapper,
+  BackButton,
+} from 'lib/ui-kit';
+import { AppRoutes } from 'app';
+import { RegisterForm } from './Register.form';
+import { StyledRegisterImage as RegisterImage } from './Register.styles';
+import { gingerbreadLatteImage } from 'assets';
 
 export const Register = () => {
   const t = useTranslations();
   return (
-    <Layout hasFooter={false}>
-      <Section shouldNotScroll>
-        <LeftColumn>
-          <H1>{t("registerPage.header")}</H1>
+    <Layout hasNavigation={false}>
+      <Section isCentered shouldNotScroll>
+        <ShadowWrapper>
+          <BackButton />
+
+          <H1>{t('registerPage.header')}</H1>
+
+          <RegisterImage alt="" src={gingerbreadLatteImage} />
 
           <RegisterForm />
 
           <ParagraphSmall>
-            {t("registerPage.loginInfo")}&nbsp;
-            <Link to={AppRoutes.LOGIN}>{t("registerPage.login")}</Link>
+            {t('registerPage.loginInfo')}&nbsp;
+            <Link to={AppRoutes.LOGIN}>{t('registerPage.login')}</Link>
           </ParagraphSmall>
-        </LeftColumn>
-
-        <DeskWithMacbookImage
-          src={deskWithMacbook}
-          alt={t("registerPage.deskWithMacbookImageAlt")}
-        />
+        </ShadowWrapper>
       </Section>
     </Layout>
   );

@@ -1,3 +1,3 @@
-export { default as deskImageSrc } from "./desk.jpeg";
-export { default as deskWithMacbook } from "./desk-with-macbook.jpg";
-export { default as deskWithDeveloper } from "./desk-with-developer.jpeg";
+export { default as coffeeStandImage } from "./coffee-stand.svg";
+export { default as gingerbreadLatteImage } from "./gingerbread-latte.svg";
+export { default as forgotPasswordImage } from "./forgot-password.svg";
