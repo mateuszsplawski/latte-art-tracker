@@ -1,12 +1,12 @@
 import { Form, Formik } from "formik";
 
-import { useAuthentication } from "lib/authentication";
+import { useUser } from "lib/api";
 import { UserSettingsFieldset } from "lib/form-kit";
 import { Button } from "lib/ui-kit";
 import { mapUserDataToUserSettingsFormData } from "./UserSettings.service";
 
 export const UserSettingsForm = () => {
-  const { userData } = useAuthentication();
+  const { userData } = useUser();
 
   return (
     <Formik

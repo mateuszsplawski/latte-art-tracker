@@ -1,13 +1,12 @@
-import { Formik } from "formik";
-import { useNavigate } from "react-router-dom";
+import { Formik } from 'formik';
 
-import { useAuthentication } from "lib/authentication";
-import { LoginFieldset, loginValidationSchema } from "lib/form-kit";
-import { useTranslations } from "lib/translations";
-import { Button } from "lib/ui-kit";
-import { useToast } from "lib/utils";
-import { StyledLoginForm as Form } from "./Login.styles";
-import { AppRoutes } from "app";
+import { useAuthentication } from 'lib/authentication';
+import { LoginFieldset, loginValidationSchema } from 'lib/form-kit';
+import { useTranslations } from 'lib/translations';
+import { Button } from 'lib/ui-kit';
+import { useToast, useNavigate } from 'lib/utils';
+import { StyledLoginForm as Form } from './Login.styles';
+import { AppRoutes } from 'app';
 
 type LoginFormValues = {
   email: string;
@@ -15,8 +14,8 @@ type LoginFormValues = {
 };
 
 const initialValues: LoginFormValues = {
-  email: "",
-  password: "",
+  email: '',
+  password: '',
 };
 
 export const LoginForm = () => {
@@ -29,13 +28,15 @@ export const LoginForm = () => {
     try {
       await login({ email, password });
       navigate(AppRoutes.HOME);
-      successToast(t("loginPage.successToast"));
+      successToast(t('loginPage.successToast'));
     } catch {
-      errorToast(t("loginPage.errorToast"));
+      errorToast(t('loginPage.errorToast'));
     }
   };
   return (
     <Formik
+      validateOnBlur={false}
+      validateOnChange={false}
       validationSchema={loginValidationSchema}
       initialValues={initialValues}
       onSubmit={handleSubmit}
@@ -44,7 +45,7 @@ export const LoginForm = () => {
         <Form noValidate>
           <LoginFieldset />
           <Button isLoading={isSubmitting} isDisabled={!dirty} type="submit">
-            {t("loginPage.buttonText")}
+            {t('loginPage.buttonText')}
           </Button>
         </Form>
       )}

@@ -4,12 +4,13 @@ import { Logo } from 'lib/ui-kit';
 
 export const Home = () => {
   const t = useTranslations();
+
   return (
     <Layout>
       <Section isCentered>
         <Logo />
 
-        <ParagraphRegular>{t('siemka')}</ParagraphRegular>
+        <ParagraphRegular>Hello</ParagraphRegular>
       </Section>
     </Layout>
   );

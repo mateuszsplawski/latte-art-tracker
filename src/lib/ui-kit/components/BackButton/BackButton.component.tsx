@@ -1,15 +1,15 @@
 import { ArrowBackIcon } from '@chakra-ui/icons';
 import { IconButton } from '@chakra-ui/react';
+import { useHistory } from 'react-router-dom';
 
 import { useTranslations } from 'lib/translations';
-import { useNavigate } from 'react-router-dom';
 
 export const BackButton = () => {
-  const navigate = useNavigate();
+  const { goBack } = useHistory()
   const t = useTranslations();
   return (
     <IconButton
-      onClick={() => navigate(-1)}
+      onClick={() => goBack()}
       aria-label="Go to previous site"
       icon={<ArrowBackIcon />}
     >

@@ -7,14 +7,14 @@ import {
   onAuthStateChanged,
   NextFn,
   User,
-} from "firebase/auth";
+} from 'firebase/auth';
 
-import { firebase } from "lib/shared";
+import { firebase } from 'lib/shared';
 import {
   LoginPayload,
   ResetPasswordPayload,
   SignUpPayload,
-} from "./firebaseAuthentication.types";
+} from './firebaseAuthentication.types';
 
 const firebaseAuth = getAuth(firebase);
 

@@ -1,23 +1,22 @@
-import { Formik } from "formik";
-import { useNavigate } from "react-router-dom";
+import { Formik } from 'formik';
 
-import { AppRoutes } from "app";
-import { useAuthentication } from "lib/authentication";
+import { AppRoutes } from 'app';
+import { useAuthentication } from 'lib/authentication';
 import {
   resetPasswordValidationSchema,
   ResetPasswordFieldset,
-} from "lib/form-kit";
-import { useTranslations } from "lib/translations";
-import { Button } from "lib/ui-kit";
-import { useToast } from "lib/utils";
-import { StyledResetPasswordForm as Form } from "./ResetPassword.styles";
+} from 'lib/form-kit';
+import { useTranslations } from 'lib/translations';
+import { Button } from 'lib/ui-kit';
+import { useToast, useNavigate } from 'lib/utils';
+import { StyledResetPasswordForm as Form } from './ResetPassword.styles';
 
 type ResetPasswordFormValues = {
   email: string;
 };
 
 const initialValues: ResetPasswordFormValues = {
-  email: "",
+  email: '',
 };
 
 export const ResetPasswordForm = () => {
@@ -30,14 +29,16 @@ export const ResetPasswordForm = () => {
     try {
       await resetPassword({ email });
       navigate(AppRoutes.LOGIN);
-      successToast(t("resetPasswordPage.successToast"));
+      successToast(t('resetPasswordPage.successToast'));
     } catch {
-      errorToast(t("resetPasswordPage.errorToast"));
+      errorToast(t('resetPasswordPage.errorToast'));
     }
   };
   return (
     <Formik
       validationSchema={resetPasswordValidationSchema}
+      validateOnBlur={false}
+      validateOnChange={false}
       initialValues={initialValues}
       onSubmit={handleSubmit}
     >
@@ -45,7 +46,7 @@ export const ResetPasswordForm = () => {
         <Form noValidate>
           <ResetPasswordFieldset />
           <Button isLoading={isSubmitting} isDisabled={!dirty} type="submit">
-            {t("resetPasswordPage.buttonText")}
+            {t('resetPasswordPage.buttonText')}
           </Button>
         </Form>
       )}

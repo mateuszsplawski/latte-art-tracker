@@ -1,6 +1,8 @@
-import { User } from "firebase/auth";
+import { UserData } from 'lib/api';
 
-export const mapUserDataToUserSettingsFormData = (userData: User | null) => ({
+export const mapUserDataToUserSettingsFormData = (
+  userData: UserData | null
+) => ({
   username: userData?.displayName,
   email: userData?.email,
   phoneNumber: userData?.phoneNumber,

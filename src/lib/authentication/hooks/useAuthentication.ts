@@ -1,21 +1,16 @@
-import { User } from "firebase/auth";
-import { useState } from "react";
 import {
   login as firebaseLogin,
   signUp as firebaseSignUp,
   resetPassword as firebaseResetPassword,
-  getUserData as firebaseGetUserData,
   logout as firebaseLogout,
-} from "../services/firebaseAuthentication";
+} from '../services/firebaseAuthentication';
 import {
   LoginPayload,
   ResetPasswordPayload,
   SignUpPayload,
-} from "../services/firebaseAuthentication.types";
+} from '../services/firebaseAuthentication.types';
 
 export const useAuthentication = () => {
-  const [userData, setUserData] = useState<User | null>(null);
-
   const login = async ({ email, password }: LoginPayload) => {
     await firebaseLogin({ email, password });
   };
@@ -30,16 +25,10 @@ export const useAuthentication = () => {
     await firebaseLogout();
   };
 
-  firebaseGetUserData((user) => setUserData(user));
-
-  const isUserAuthenticated = !!userData;
-
   return {
     login,
     register,
     resetPassword,
     logout,
-    userData,
-    isUserAuthenticated,
   };
 };

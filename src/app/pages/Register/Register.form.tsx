@@ -1,8 +1,8 @@
 import { Formik } from 'formik';
-import { useNavigate } from 'react-router-dom';
 
 import { AppRoutes } from 'app';
-import { useDatabase } from 'lib/api';
+import { useUser } from 'lib/api';
+import { useNavigate } from 'lib/utils';
 import { useAuthentication } from 'lib/authentication';
 import { registerValidationSchema, RegisterFieldset } from 'lib/form-kit';
 import { useTranslations } from 'lib/translations';
@@ -25,7 +25,7 @@ const initialValues: RegisterFormValues = {
 export const RegisterForm = () => {
   const t = useTranslations();
   const { register } = useAuthentication();
-  const { setupUserEntry } = useDatabase();
+  const { setupUserEntry } = useUser();
   const { successToast, errorToast } = useToast();
   const navigate = useNavigate();
 
@@ -42,6 +42,8 @@ export const RegisterForm = () => {
   return (
     <Formik
       validationSchema={registerValidationSchema}
+      validateOnBlur={false}
+      validateOnChange={false}
       initialValues={initialValues}
       onSubmit={handleSubmit}
     >
